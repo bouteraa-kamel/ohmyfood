@@ -223,9 +223,7 @@ a {
   font-size: 16px;
   font-weight: 500;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2509803922);
-  transition:
-    opacity 0.4s,
-    transform 0.4s;
+  transition: opacity 0.4s, transform 0.4s;
 }
 
 .bouton:hover {
@@ -485,6 +483,7 @@ body {
   margin-bottom: 20px;
   width: 100%;
   max-width: 350px;
+  position: relative;
 }
 .container .menu_cards img {
   width: 100%;
@@ -514,11 +513,13 @@ body {
   font-weight: 500;
 }
 .container .heart {
-  position: relative;
+  position: absolute;
   width: 24px;
   height: 24px;
   cursor: pointer;
   display: inline-block;
+  right: 20px;
+  top: 250px;
 }
 .container {
   /* on cache la checkbox */
@@ -628,7 +629,7 @@ body {
   .home_aligne {
     display: flex;
     flex-direction: row-reverse;
-    gap: 10px;
+    gap: 20px;
   }
   .home_footer ul {
     display: flex;
