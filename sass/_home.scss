@@ -1,0 +1,339 @@
+$colorgis: #f6f6f6;
+@mixin flex-center($direction: column) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+@mixin conf-h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 5%;
+}
+
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+.home_header {
+  width: 100%;
+  height: auto;
+  @include flex-center;
+
+  .logo {
+    width: 100%;
+    background: white;
+    padding: 18px 0 10px;
+    position: relative;
+    z-index: 2;
+    @include flex-center();
+    box-shadow: 0px 2px 4px 0px #00000026;
+  }
+
+  .location {
+    height: 50px;
+    width: 100%;
+    gap: 5px;
+    background-color: #eaeaea;
+    position: relative;
+    z-index: 1;
+    @include flex-center(row);
+    box-shadow: 0px 4px 4px 0px #00000040;
+  }
+}
+.reservation {
+  background-color: $colorgis;
+  @include flex-center;
+
+  .titre {
+    font-size: 24px;
+    background-color: $colorgis;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
+    margin: 15px 70px;
+    text-align: center;
+  }
+  .selection {
+    width: 100%;
+    margin: 15px 70px;
+    text-align: center;
+    p {
+      margin: 15px 30px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 300;
+    }
+  }
+  .bouton {
+    height: 50px;
+    width: 218px;
+    border-radius: 25px;
+    background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0px 4px 10px 0px #00000040;
+    margin-bottom: 50px;
+    border: 0 solid #f6f6f6;
+    transition-property: opacity transform;
+    transition-duration: 0.4s;
+    &:hover {
+      opacity: 70%;
+      cursor: pointer;
+      transform: scale(1.01);
+    }
+  }
+}
+/* Style général de la section */
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.fonctionnement_circle_button {
+  display: flex;
+  align-items: center;
+}
+
+/* Titre de la section */
+.fonctionnement__titre {
+  @include conf-h2();
+}
+
+/* Conteneur du numéro rond (1, 2, 3) */
+.circlenumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9356dc; /* Violet principal */
+  color: white;
+  border-radius: 50%; /* Rend le fond circulaire */
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 14px;
+  z-index: 2;
+}
+
+/* Style du bouton principal de chaque étape */
+.fonctionnement__button {
+  background-color: #f6f6f6; /* Gris clair pour rappeler la maquette */
+  border: none;
+  border-radius: 15px;
+  padding: 15px 25px;
+  width: 100%;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  display: flex;
+  align-items: center;
+
+  height: 72.4px;
+  margin-left: -20px;
+}
+
+/* Contenu texte + icône à l'intérieur du bouton */
+.fonctionnement__button-text {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espace entre icône et texte */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Icônes Font Awesome */
+
+.store {
+  color: #9356dc; /* Violet cohérent avec la marque */
+  font-size: 18px;
+}
+
+.container {
+  background-color: $colorgis;
+  .menu {
+    @include flex-center();
+  }
+  .restaurant__titre {
+    @include conf-h2;
+    padding-top: 50px;
+  }
+  .menu_cards {
+    background: white;
+    border-radius: 20px 20px 20px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .menu_cards img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+  .description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 10px;
+  }
+  .image_new {
+    display: flex;
+    position: relative;
+  }
+  .new {
+    position: absolute;
+    color: #008766;
+    top: 16px;
+    right: 16px;
+    background: #99e2d0;
+    border-radius: 2px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .heart {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  /* on cache la checkbox */
+  .heart input {
+    display: none;
+  }
+
+  /* positionner les deux coeurs au même endroit */
+  .heart i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+  }
+
+  /* coeur vide */
+  .heart-empty {
+    color: black;
+  }
+
+  /* coeur plein */
+  .heart-full {
+    background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  /* quand on clique */
+  .heart input:checked ~ .heart-full {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .text h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px 5px;
+  }
+  .text p {
+    margin: 5px 5px;
+    font-size: 17px;
+  }
+}
+.home_footer {
+  background: #353535;
+  color: white;
+  padding: 22px 25px;
+}
+
+.logo_footer {
+  margin: 0 0 16px 0;
+  font-family: "Shrikhand", cursive;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.home_footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home_footer li {
+  margin-bottom: 8px;
+}
+
+.footer_text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (min-width: 760px) {
+  .fonctionnement {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 90%;
+    max-width: 1400px;
+    justify-content: space-around;
+  }
+  .container {
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0px 50px;
+      gap: 50px;
+    }
+
+    .menu_cards {
+      background: white;
+      border-radius: 20px 20px 20px 20px;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 490px;
+      max-height: 290px;
+    }
+  }
+
+  .home_footer {
+    padding: 30px 40px;
+  }
+  .home_aligne {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+
+  .home_footer ul {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .home_footer li {
+    margin-bottom: 0;
+  }
+  .logo_footer {
+    margin: 0;
+    font-family: "Shrikhand", cursive;
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
