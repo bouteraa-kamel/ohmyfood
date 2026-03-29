@@ -1,0 +1,56 @@
+.container_footer {
+  background: #353535;
+  color: white;
+  padding: 22px 25px;
+}
+
+.logo_footer {
+  margin: 0 0 16px 0;
+  font-family: "Shrikhand", cursive;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.container_footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container_footer li {
+  margin-bottom: 8px;
+}
+
+.footer_text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (min-width: 760px) {
+  .container_footer {
+    padding: 30px 40px;
+  }
+
+  .footer_aligne {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+
+  .container_footer ul {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .container_footer li {
+    margin-bottom: 0;
+  }
+
+  .logo_footer {
+    margin: 0;
+    font-family: "Shrikhand", cursive;
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
