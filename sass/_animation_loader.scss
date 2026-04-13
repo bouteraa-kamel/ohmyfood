@@ -1,0 +1,41 @@
+.loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: loaderFadeOut 2s forwards;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f6f6f6;
+  border-top: 6px solid #9356dc;
+  border-right: 6px solid #ff79da;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderFadeOut {
+  0%,
+  80% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
